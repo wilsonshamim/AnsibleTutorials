@@ -1,0 +1,44 @@
+create a yml file
+
+first.yml
+---
+- name: install and run
+  hosts: localhost
+  sudo: true
+  user: shamim
+
+
+  tasks:
+  - name: ping all hosts
+    ping:
+
+  - name: install base packages
+    apt: pkg={{item}} state=present update_cache=yes cache_valid_time=604800
+    with_items:
+       - git
+       - python-pip
+
+  - name: Install global python requirements
+    pip: name={{item}} state=present
+    with_items:
+       - pandas
+       - scipy
+       - shapely
+       - django
+
+
+  - name: Execute script
+    command: python /home/shamim/ansible/test.py
+
+
+...
+
+then run the command:
+ansible-playbook first.yml --ask-sudo-pass
+
+The above file will performt the below
+ping localhost
+install all the packages like git, pip
+then it will install all the python modules mentioned above
+then execute a python script
+
