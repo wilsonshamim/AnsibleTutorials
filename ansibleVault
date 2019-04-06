@@ -21,17 +21,13 @@ example:
 ---
 
 - name: install and run
-  hosts: localhost
+  hosts: "{{ host1 }}"
   sudo: true
   user: shamim
-
-
-
-
+  vars_files:
+    - ../vars/vault.yml
 
   tasks:
-
   - name: ping all hosts
-
     ping:
 
