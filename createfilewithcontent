@@ -1,0 +1,23 @@
+---
+- name: install and run
+  hosts: "{{ host11 }}"
+  sudo: false
+  user: shamim
+  vars_files:
+    - ../vars/vault.yml
+
+  tasks:
+  - name: ping all hosts
+    ping:
+  - name: create a file
+
+    copy:
+      content: "dlfjdsjfsdjfsdfdsklf lfjsdjfsdjsdfkljfdsi \n
+                 kdfldsljfklsdfldjsklfk  \n {{ host22 }}"
+      dest: "test1.txt"
+
+
+
+
+
+
