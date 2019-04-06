@@ -7,6 +7,7 @@
 then add the content like :
 ---
 host1: "localhost"
+host2: "localhost2"
 
 3. you can view the file :
      ansible-vault view  vault.yml --vault-id ansible-vault.pass
