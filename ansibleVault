@@ -32,3 +32,11 @@ example:
   - name: ping all hosts
     ping:
 
+
+
+--------------------
+
+encrypt and decrypt file using ansible vault:
+     ansible-vault encrypt  vault.yml --vault-id ansible-vault.pass
+     ansible-vault decrypt  vault.yml --vault-id ansible-vault.pass
+
