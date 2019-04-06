@@ -1,0 +1,21 @@
+1. generate a password file:
+    openssl rand -base64 2048 > ansible-vault.pass
+    
+2. in the vars folder , create vault.yml file using above password file.
+   ansible-vault create vault.yml --vault-id ansible-vault.pass
+
+then add the content like :
+---
+host1: "localhost"
+
+3. you can view the file :
+     ansible-vault view  vault.yml --vault-id ansible-vault.pass
+
+4. you can edit the file :
+      ansible-vault edit vault.yml --vault-id ansible-vault.pass
+      
+5. now use this vault.yml file in the playbook.
+
+example:
+
+
