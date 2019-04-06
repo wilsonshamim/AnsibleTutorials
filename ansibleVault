@@ -18,4 +18,20 @@ host1: "localhost"
 
 example:
 
+---
+
+- name: install and run
+  hosts: localhost
+  sudo: true
+  user: shamim
+
+
+
+
+
+  tasks:
+
+  - name: ping all hosts
+
+    ping:
 
